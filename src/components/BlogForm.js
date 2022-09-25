@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import blogService from "../services/blogs";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,11 @@ function BlogForm({ addBlog }) {
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [intent, setIntent] = useState("");
+  const [hideBackground, setHideBackground] = useState(true);
+
+  const handleClick = (val) => {
+    setHideBackground(!val);
+  };
 
   const addBlogHandler = async (e) => {
     e.preventDefault();
@@ -53,63 +58,63 @@ function BlogForm({ addBlog }) {
         setTimeout(() => {
           setIntent("");
           setMessage("");
+          navigate("/login");
         }, 2500);
       }
       e.target[0].value = "";
       e.target[1].value = "";
     }
   };
+
+  useEffect(() => {
+    document.title = "Compose thought - ThoughtRoom";
+  }, []);
   return (
-    <div className="blogForm">
+    <>
       <Navbar
         loggedInAs={JSON.parse(localStorage.getItem("loggedInBlogUser")).name}
+        onClick={handleClick}
       />
       {message ? <Notification message={message} intent={intent} /> : null}
+      {hideBackground ? (
+        <div className="blogForm">
+          <div className="createBlog">
+            <h1 className="blogh1">Create a new thought !</h1>
+            <form onSubmit={addBlogHandler}>
+              <label htmlFor="title" className="blogLabel">
+                Title
+              </label>
+              <br />
 
-      <div className="createBlog">
-        <h1 className="blogh1">Create a new thought !</h1>
-        <form onSubmit={addBlogHandler}>
-          <label htmlFor="title" className="blogLabel">
-            Title
-          </label>
-          <br />
-          {/* <input
-            className="titleInput"
-            type="text"
-            value={title}
-            id="title"
-            onChange={(e) => {
-              setTitle(e.target.value);
-            }}
-          /> */}
-
-          <textarea
-            name="title"
-            id="title"
-            cols="70"
-            rows="3"
-            className="titleInput"
-            maxLength="100"
-          ></textarea>
-          <br />
-          <label htmlFor="content" className="blogLabel">
-            Content
-          </label>
-          <br />
-          <textarea
-            name="content"
-            id="content"
-            cols="90"
-            rows="10"
-            className="contentInput"
-          ></textarea>
-          <br />
-          <button type="submit" className="logout">
-            Create
-          </button>
-        </form>
-      </div>
-    </div>
+              <textarea
+                name="title"
+                id="title"
+                cols="70"
+                rows="3"
+                className="titleInput"
+                maxLength="100"
+              ></textarea>
+              <br />
+              <label htmlFor="content" className="blogLabel">
+                Content
+              </label>
+              <br />
+              <textarea
+                name="content"
+                id="content"
+                cols="90"
+                rows="10"
+                className="contentInput"
+              ></textarea>
+              <br />
+              <button type="submit" className="logout">
+                Create
+              </button>
+            </form>
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 }
 

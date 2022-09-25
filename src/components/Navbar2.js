@@ -23,11 +23,11 @@ function Navbar2() {
 
   return (
     <div>
-      <ul className="nav">
+      <ul className="nav2">
         <Link to="/" className="navHeading nav2Title">
           ThoughtRoom
         </Link>
-        <div className="endItems">
+        <div className="endItems2">
           <li
             className={`listItem2 otherNavComponent2 ${
               selected === "register" ? "selectedNav" : ""

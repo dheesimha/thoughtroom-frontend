@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import Navbar2 from "./Navbar2";
 
 function Home() {
+  useEffect(() => {
+    document.title = "Home - ThoughtRoom";
+  }, []);
   return (
     <div className="home">
       <Navbar2 />

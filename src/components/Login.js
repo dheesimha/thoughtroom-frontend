@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { newUser } from "../reducers/userReducer";
@@ -20,7 +20,7 @@ function Login() {
 
     try {
       const user = await loginService.login({ username, password });
-      window.localStorage.setItem("loggedInBlogUser", JSON.stringify(user));
+      await localStorage.setItem("loggedInBlogUser", JSON.stringify(user));
       blogService.setToken(user.token);
       dispatch(newUser(user));
       setMessage(`Logged In as ${username}`);
@@ -43,12 +43,15 @@ function Login() {
       }, 3000);
     }
   };
+
+  useEffect(() => {
+    document.title = "Login - ThoughtRoom";
+  }, []);
   return (
     <>
       <Navbar2 />
+      {message ? <Notification message={message} intent={intent} /> : null}
       <div className="pageCol">
-        {message ? <Notification message={message} intent={intent} /> : null}
-
         <h2 id="loginHeader">Login</h2>
         <form onSubmit={handleSubmit}>
           <label id="usernameLabel" htmlFor="loginUsername">

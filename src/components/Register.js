@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import registerService from "../services/register";
 import "../App.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -81,6 +81,9 @@ function Register() {
       }
     }
   };
+  useEffect(() => {
+    document.title = "Register - ThoughtRoom";
+  }, []);
   return (
     <>
       <Navbar2 />
@@ -130,7 +133,7 @@ function Register() {
           />
 
           <br />
-          <button id="RegisterSubmitBtn" type="submit">
+          <button id="registerSubmitBtn" type="submit">
             Sign Up
           </button>
           <br />

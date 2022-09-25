@@ -13,52 +13,73 @@ const App = () => {
   const userArray = useSelector((state) => state.users);
   const [user, setUser] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
+  const [hideBackground, setHideBackground] = useState(true);
+
+  const handleClick = (val) => {
+    setHideBackground(!val);
+  };
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const likeIncrement = async (id, username) => {
     // console.log(username);
-    await blogService.update(id, username);
-    // setErrorMessage(`Liked`);
-    let blogList = await blogService.getAll();
-    let revBlogList = blogList.reverse(blogList);
-    setBlogs(revBlogList);
+    try {
+      await blogService.update(id, username);
+      let blogList = await blogService.getAll();
+      let revBlogList = blogList.reverse(blogList);
+      setBlogs(revBlogList);
+    } catch (err) {
+      console.log(err);
+      navigate("/login");
+    }
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const likeDecrement = async (id, username) => {
-    // console.log(username);
-    await blogService.update(id, username);
-    let blogList = await blogService.getAll();
-    let revBlogList = blogList.reverse();
-    setBlogs(revBlogList);
+    try {
+      await blogService.update(id, username);
+      let blogList = await blogService.getAll();
+      let revBlogList = blogList.reverse();
+      setBlogs(revBlogList);
+    } catch (err) {
+      console.log(err);
+      navigate("/login");
+    }
   };
 
   useEffect(() => {
-    try {
-      blogService.getAll().then((blog) => {
-        setBlogs(blog.reverse());
-      });
-    } catch (err) {
-      navigate("/login");
-    }
-  }, [navigate]);
+    document.title = "All thoughts-ThoughtRoom";
+  }, []);
 
   useEffect(() => {
-    const loggedInUserJSON = window.localStorage.getItem("loggedInBlogUser");
+    try {
+      const loggedInUserJSON = window.localStorage.getItem("loggedInBlogUser");
 
-    if (loggedInUserJSON) {
-      const user = JSON.parse(loggedInUserJSON);
+      if (loggedInUserJSON) {
+        const user = JSON.parse(loggedInUserJSON);
 
-      setUser(user);
-      setCurrentUser(userArray[userArray.length - 1]);
-
-      blogService.setToken(user.token);
-    } else {
+        setUser(user);
+        setCurrentUser(userArray[userArray.length - 1]);
+      }
+    } catch (error) {
       navigate("/login");
     }
   }, [userArray, navigate]);
+
+  useEffect(() => {
+    blogService
+      .getAll()
+      .then((blog) => {
+        setBlogs(blog.reverse());
+      })
+      .catch((error) => {
+        console.log(error);
+        navigate("/login");
+      });
+  }, [navigate]);
+
   const blogForm = () => {
     return blogs.map((blog) => {
       return (
@@ -106,14 +127,12 @@ const App = () => {
   if (currentUser !== null) {
     return (
       <div className="pageEntire">
-        {/* <Notification message={errorMessage} /> */}
-
         <div>
-          <Navbar loggedInAs={user.name} />
+          <Navbar loggedInAs={user.name} onClick={handleClick} />
           <h1 className="blogh1">
             Study, Comprehend, Decipher, Unravel all thoughts !
           </h1>
-          {blogForm()}
+          {hideBackground ? blogForm() : null}
         </div>
       </div>
     );

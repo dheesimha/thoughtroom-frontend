@@ -128,7 +128,7 @@ a {
   font-size: 20px;
 }
 
-#RegisterSubmitBtn {
+#registerSubmitBtn {
   margin-top: 10px;
   color: white;
   cursor: pointer;
@@ -141,7 +141,7 @@ a {
   font-size: 16px;
 }
 
-#RegisterSubmitBtn:hover {
+#registerSubmitBtn:hover {
   background-color: #13b4ff !important;
 }
 
@@ -285,7 +285,31 @@ a {
   justify-content: center;
 }
 
+.nav2 {
+  padding: 30px !important;
+  padding-bottom: 38px !important;
+  /* border: 2px solid #f2f2f2; */
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px !important;
+  align-items: center;
+  justify-content: center;
+}
+
 .endItems {
+  /* border: 2px solid orange; */
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 0;
+  list-style-type: none;
+  margin-right: 45px;
+  color: white;
+}
+.endItems2 {
   /* border: 2px solid orange; */
   display: flex;
   flex-direction: row;
@@ -319,7 +343,7 @@ a {
   background-color: #0ea5e9 !important;
   padding: 9px;
   width: 93px;
-  /* border: 1px solid white; */
+  border: 1px solid white;
   border-radius: 15px;
   font-size: 15px !important;
 }
@@ -331,7 +355,7 @@ a {
 .usernameComponent {
   margin-top: 10px !important;
   margin-left: 30px !important;
-  color: #13b4ff;
+  color: #13b4ff !important;
 }
 
 .otherNavComponent {
@@ -361,7 +385,7 @@ a {
 }
 
 .readMoreContent {
-  color: #13b4ff;
+  color: #13b4ff !important;
 }
 
 .readMoreContent:hover {
@@ -388,6 +412,7 @@ a {
   text-align: center;
   color: white;
   margin-bottom: 30px !important;
+  /* background-color: #283346; */
 }
 
 .titleInput {
@@ -445,6 +470,7 @@ a {
 
 #navTitle {
   cursor: pointer;
+  font-weight: 500;
 }
 
 #navTitle:hover {
@@ -454,6 +480,7 @@ a {
 .nav2Title {
   cursor: pointer;
   color: #13b4ff;
+  font-weight: 500;
 }
 
 .singleBlog {
@@ -484,7 +511,7 @@ a {
 }
 
 .selectedNav {
-  color: #0ea5e9;
+  color: #0ea5e9 !important;
   text-decoration: underline;
 }
 
@@ -572,4 +599,186 @@ body::-webkit-scrollbar-thumb {
 .heroText {
   font-size: 45px;
   margin-bottom: 20px;
+}
+
+.mobileItems,
+.menuIcon {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  * {
+    overflow-x: hidden;
+  }
+  .endItems2 {
+    margin-right: 0px !important;
+    font-size: 18px;
+  }
+
+  .pageCol {
+    /* text-align: center; */
+    margin-left: 28px;
+    width: 350px;
+  }
+
+  .navHeading {
+    font-size: 26px !important;
+    margin-left: 1px;
+    font-weight: 600px;
+  }
+
+  #loginSubmitBtn {
+    width: 300px;
+  }
+
+  .pageCol2 {
+    margin-left: 28px;
+    width: 350px;
+  }
+
+  #registerSubmitBtn {
+    width: 300px;
+  }
+
+  #loginUsername,
+  #loginPassword,
+  #RegisterName,
+  #RegisterUsername,
+  #RegisterPassword {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .heroImg {
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
+  img {
+    width: 300px;
+    height: 280px;
+    /* border: 2px solid yellow; */
+  }
+
+  .heroText {
+    font-size: 25px;
+  }
+
+  .homeMain {
+    flex-direction: column;
+  }
+
+  .nextSec {
+    padding-top: 15px !important;
+    /* border: 2px solid green; */
+  }
+
+  #homeSubmitBtn {
+    width: 300px;
+  }
+
+  .endItems {
+    display: none;
+  }
+
+  .menuIcon,
+  .mobileItems {
+    display: inline-flex;
+  }
+
+  .hamburgerIcon {
+    color: #0ea5e9;
+    margin-left: 305px;
+    cursor: pointer;
+  }
+
+  .nav {
+    padding-top: 20px !important;
+    padding-left: 20px !important;
+  }
+
+  .nav2 {
+    padding-top: 30px !important;
+    padding-left: 20px !important;
+  }
+
+  .mobNavVisble {
+    display: block;
+    text-align: center;
+    /* background-color: green !important; */
+  }
+
+  .mobileListItems {
+    position: absolute;
+    right: 15px;
+    width: 100%;
+    height: 100%;
+    padding-left: 160px;
+    border-bottom: 2px solid #3d495b;
+    /* z-index: 2; */
+
+    /* border: 2px solid orange; */
+  }
+
+  .mobNavInVisible {
+    display: none;
+  }
+
+  .listItem {
+    padding: 9px;
+    text-align: left;
+    color: white;
+  }
+
+  .usernameComponent {
+    margin-left: 15px !important;
+  }
+
+  .cancelMenu {
+    color: #a8b7ce;
+    position: absolute;
+    right: 20px;
+  }
+
+  .blogContainer {
+    flex-direction: row;
+    margin: 0px !important;
+  }
+
+  .straightLine {
+    display: none;
+  }
+
+  .dateContent {
+    margin-left: 20px;
+  }
+
+  .blogh1 {
+    margin-top: 5px !important;
+    font-size: 25px;
+  }
+
+  .titleInput {
+    width: 70%;
+  }
+
+  .contentInput {
+    width: 70%;
+  }
+
+  .blogItems {
+    margin-top: 25px;
+    margin-left: -95px;
+  }
+
+  .liked,
+  .notLiked,
+  .deleteIcon {
+    font-size: 2rem !important;
+  }
+
+  .singleBlog {
+    margin-left: 15px !important;
+    margin-right: 3px !important;
+  }
 }
