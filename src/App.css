@@ -115,6 +115,9 @@ a {
   font-size: 15px;
 }
 
+.mobileDateContent {
+  color: #0ea5e9;
+}
 #RegisterPassword {
   padding: 5px;
   margin: 20px;
@@ -259,9 +262,10 @@ a {
 }
 
 .blogItems {
-  /* margin-bottom: 40px !important; */
+  display: flex;
+  flex-direction: column;
   padding: 15px;
-  margin-top: 15px;
+  margin-top: -15px;
   margin-bottom: 30px;
   text-align: left;
 }
@@ -269,6 +273,10 @@ a {
 .iconsDiv {
   margin-top: 10px;
   color: white;
+}
+
+.mobileDateContent {
+  display: none;
 }
 
 .nav {
@@ -378,6 +386,7 @@ a {
 .blogTitle {
   color: white;
   font-size: 25px;
+  margin-top: 30px;
 }
 
 .blogContent {
@@ -606,9 +615,208 @@ body::-webkit-scrollbar-thumb {
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 379px) {
   * {
     overflow-x: hidden;
+  }
+
+  #loginUsername:focus,
+  #loginPassword:focus {
+    border: 2px solid white;
+  }
+  .endItems2 {
+    margin-right: 0px !important;
+    font-size: 18px;
+  }
+
+  .pageCol {
+    /* text-align: center; */
+    margin-left: 10px;
+    width: 350px;
+  }
+
+  .navHeading {
+    font-size: 26px !important;
+    margin-left: 1px;
+    font-weight: 600px;
+  }
+
+  #loginSubmitBtn {
+    width: 300px;
+  }
+
+  .pageCol2 {
+    margin-left: 10px;
+    width: 350px;
+  }
+
+  #registerSubmitBtn {
+    width: 300px;
+  }
+
+  #loginUsername,
+  #loginPassword,
+  #RegisterName,
+  #RegisterUsername,
+  #RegisterPassword {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .heroImg {
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
+  img {
+    width: 300px;
+    height: 280px;
+    /* border: 2px solid yellow; */
+  }
+
+  .heroText {
+    font-size: 25px;
+  }
+
+  .homeMain {
+    flex-direction: column;
+  }
+
+  .nextSec {
+    padding-top: 15px !important;
+    /* border: 2px solid green; */
+  }
+
+  #homeSubmitBtn {
+    width: 300px;
+  }
+
+  .endItems {
+    display: none;
+  }
+
+  .menuIcon,
+  .mobileItems {
+    display: inline-flex;
+  }
+
+  .hamburgerIcon {
+    color: #0ea5e9;
+    margin-left: 285px;
+    cursor: pointer;
+  }
+
+  .nav {
+    padding-top: 20px !important;
+    padding-left: 20px !important;
+  }
+
+  .nav2 {
+    padding-top: 30px !important;
+    padding-left: 20px !important;
+  }
+
+  .mobNavVisble {
+    display: block;
+    text-align: center;
+    /* background-color: green !important; */
+  }
+
+  .mobileListItems {
+    position: absolute;
+    right: 28px;
+    width: 100%;
+    height: 100%;
+    padding-left: 160px;
+    border-bottom: 2px solid #3d495b;
+    /* z-index: 2; */
+
+    /* border: 2px solid orange; */
+  }
+
+  .mobNavInVisible {
+    display: none;
+  }
+
+  .listItem {
+    padding: 9px;
+    text-align: left;
+    color: white;
+  }
+
+  .usernameComponent {
+    margin-left: 15px !important;
+  }
+
+  .cancelMenu {
+    color: #a8b7ce;
+    position: absolute;
+    right: 20px;
+  }
+
+  .blogContainer {
+    flex-direction: row;
+    margin: 0px !important;
+  }
+
+  .straightLine {
+    display: none;
+  }
+
+  .dateContent {
+    margin-left: 20px;
+    display: none;
+  }
+
+  .blogh1 {
+    margin-top: 15px !important;
+    font-size: 25px;
+  }
+
+  .titleInput {
+    width: 70%;
+  }
+
+  .contentInput {
+    width: 70%;
+  }
+
+  .blogItems {
+    margin-top: 1px;
+    margin-left: 5px;
+  }
+
+  .liked,
+  .notLiked,
+  .deleteIcon {
+    font-size: 2rem !important;
+  }
+
+  .singleBlog {
+    margin-left: 15px !important;
+    margin-right: 3px !important;
+  }
+
+  .blogTitle {
+    margin-top: 13px;
+  }
+
+  .mobileDateContent {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 380px) and (max-width: 600px) {
+  * {
+    overflow-x: hidden;
+  }
+
+  #loginUsername:focus,
+  #loginPassword:focus,
+  #RegisterName:focus,
+  #RegisterUsername:focus,
+  #RegisterPassword:focus {
+    outline: 2px solid white;
   }
   .endItems2 {
     margin-right: 0px !important;
@@ -781,5 +989,366 @@ body::-webkit-scrollbar-thumb {
   .singleBlog {
     margin-left: 15px !important;
     margin-right: 3px !important;
+  }
+
+  .blogTitle {
+    margin-top: 13px;
+  }
+
+  .mobileDateContent {
+    display: block;
+  }
+}
+
+/* Tablets  */
+
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  * {
+    overflow-x: hidden;
+    font-size: 1.3rem;
+  }
+  .endItems2 {
+    margin-right: 0px !important;
+    font-size: 30px;
+  }
+
+  .pageCol {
+    /* text-align: center; */
+    margin-left: 242px;
+    width: 350px;
+  }
+  #loginHeader {
+    font-size: 61px;
+    margin-top: -30px;
+    color: #0ea5e9;
+  }
+
+  #usernameLabel,
+  #passwordLabel {
+    font-size: 29px;
+  }
+
+  .navHeading {
+    font-size: 44px !important;
+    margin-left: 1px;
+    font-weight: 600px;
+  }
+
+  #loginSubmitBtn {
+    width: 347px;
+  }
+
+  #RegisterHeader {
+    font-size: 61px;
+  }
+  .userLink {
+    color: #8b8e93;
+    padding-left: 5px;
+    padding-right: 8px;
+    font-size: 30px;
+  }
+  #loginSubmitBtn {
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: #0ea5e9 !important;
+    padding: 15px;
+    width: 400px;
+    height: 81px;
+    border: 1px solid #3d495b;
+    border-radius: 15px;
+    font-size: 34px;
+  }
+
+  .pageCol2 {
+    margin-left: 242px;
+    width: 350px;
+  }
+
+  #nameLabel {
+    font-size: 29px;
+  }
+
+  #registerSubmitBtn {
+    width: 360px;
+    height: 81px;
+    font-size: 34px;
+  }
+
+  #loginUsername,
+  #loginPassword,
+  #RegisterName,
+  #RegisterUsername,
+  #RegisterPassword {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .heroImg {
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
+  img {
+    width: 604px;
+    height: 542px;
+    /* border: 2px solid yellow; */
+  }
+
+  .heroText {
+    font-size: 37px;
+  }
+
+  .homeMain {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .nextSec {
+    padding-top: 15px !important;
+    /* border: 2px solid green; */
+  }
+
+  #homeSubmitBtn {
+    width: 399px;
+  }
+
+  #homeSubmitBtn {
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: #0ea5e9 !important;
+    padding: 15px;
+    width: 400px;
+    height: 76px;
+    border: 1px solid #3d495b;
+    border-radius: 15px;
+    font-size: 31px;
+  }
+
+  .endItems {
+    display: none;
+  }
+
+  .menuIcon,
+  .mobileItems {
+    display: inline-flex;
+  }
+
+  .otherNavComponent {
+    margin-top: 10px !important;
+    margin-left: 234px !important;
+  }
+
+  .logout {
+    color: white;
+    cursor: pointer;
+    background-color: #0ea5e9 !important;
+    padding: 9px;
+    width: 196px;
+    border: 1px solid white;
+    border-radius: 15px;
+    font-size: 29px !important;
+    margin-left: 178px;
+    height: 3rem;
+  }
+
+  .hamburgerIcon {
+    color: #0ea5e9;
+    margin-left: 600px;
+    cursor: pointer;
+  }
+
+  .nav {
+    padding-top: 20px !important;
+    padding-left: 20px !important;
+  }
+
+  .nav2 {
+    padding-top: 30px !important;
+    padding-left: 20px !important;
+  }
+
+  .mobNavVisble {
+    display: block;
+    text-align: center;
+    /* background-color: green !important; */
+  }
+
+  .mobileListItems {
+    position: absolute;
+    right: 15px;
+    width: 100%;
+    height: 100%;
+    padding-left: 160px;
+    border-bottom: 2px solid #3d495b;
+    margin-right: -10px;
+    /* z-index: 2; */
+
+    /* border: 2px solid orange; */
+  }
+
+  .mobNavInVisible {
+    display: none;
+  }
+
+  .listItem {
+    padding: 9px;
+    text-align: left;
+    color: white;
+  }
+
+  .usernameComponent {
+    margin-left: 234px !important;
+  }
+
+  .cancelMenu {
+    color: #a8b7ce;
+    position: absolute;
+    right: 50px !important;
+    font-size: 2rem !important;
+  }
+
+  #singleBlogHeading {
+    margin-bottom: 30px !important;
+    color: #13b4ff !important;
+    font-size: 32px;
+  }
+
+  .blogContentPara {
+    line-height: 53px;
+    font-size: 31px;
+  }
+
+  .blogTitle {
+    color: white;
+    font-size: 32px;
+    margin-top: 30px;
+  }
+
+  .blogContainer {
+    flex-direction: row;
+    margin: 0px !important;
+  }
+
+  .straightLine {
+    display: none;
+  }
+
+  .dateContent {
+    margin-left: 20px;
+    display: none;
+  }
+
+  .blogh1 {
+    margin-top: 15px !important;
+    font-size: 38px;
+  }
+
+  .titleInput {
+    width: 70%;
+  }
+
+  .contentInput {
+    width: 70%;
+  }
+
+  .blogItems {
+    margin-top: 1px;
+    margin-left: 5px;
+  }
+
+  .liked,
+  .notLiked,
+  .deleteIcon {
+    font-size: 2rem !important;
+  }
+
+  .singleBlog {
+    margin-left: 15px !important;
+    margin-right: 3px !important;
+  }
+
+  .blogTitle {
+    margin-top: 13px;
+  }
+
+  .mobileDateContent {
+    display: block;
+  }
+}
+
+/* Mobile landscape */
+@media only screen and (min-width: 280px) and (max-width: 900px) and (orientation: landscape) {
+  .nav2 {
+    font-size: 13px !important;
+  }
+  .navHeading {
+    font-size: 23px !important;
+    list-style-type: none;
+    position: absolute;
+    left: 0;
+    margin-left: 10px !important;
+    padding: 8px;
+    color: white;
+  }
+
+  .pageCol {
+    display: flex;
+    flex-direction: column;
+    color: #eeeeef;
+    background-color: black;
+    margin-top: -6px;
+    padding: 50px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: 80px;
+  }
+
+  #loginHeader {
+    font-size: 25px;
+    margin-top: -30px;
+    color: #0ea5e9;
+  }
+
+  #loginUsername,
+  #loginPassword {
+    font-size: 12px;
+  }
+
+  .endItems2 {
+    margin-right: 0px !important;
+    font-size: 14px !important;
+  }
+
+  .heroText {
+    font-size: 22px;
+  }
+
+  img {
+    width: 259px;
+    height: 202px;
+    /* border: 2px solid yellow; */
+  }
+  #homeSubmitBtn {
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: #0ea5e9 !important;
+    padding: 15px;
+    width: 400px;
+    height: 47px;
+    border: 1px solid #3d495b;
+    border-radius: 15px;
+    font-size: 16px;
   }
 }

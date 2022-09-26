@@ -30,6 +30,9 @@ const Blog = (props) => {
 
   return (
     <div className="blogItems">
+      <p className="mobileDateContent">
+        {new Date(props.blog.timeStamp).toDateString()}
+      </p>
       <h1 className="blogTitle">{props.blog.title}</h1>
       <br />
       <p className="blogContent">{props.blog.content.substr(0, 150)} ...</p>
