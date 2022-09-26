@@ -751,10 +751,11 @@ body::-webkit-scrollbar-thumb {
 
   .dateContent {
     margin-left: 20px;
+    display: none;
   }
 
   .blogh1 {
-    margin-top: 5px !important;
+    margin-top: 15px !important;
     font-size: 25px;
   }
 
@@ -767,8 +768,8 @@ body::-webkit-scrollbar-thumb {
   }
 
   .blogItems {
-    margin-top: 25px;
-    margin-left: -95px;
+    margin-top: 1px;
+    margin-left: 5px;
   }
 
   .liked,

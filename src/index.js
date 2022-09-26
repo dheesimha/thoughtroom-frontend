@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import App from "./App";
 import "./index.css";
 import userReducer from "./reducers/userReducer";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
@@ -22,7 +22,7 @@ const store = configureStore({
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <Router>
+    <HashRouter>
       <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
@@ -31,6 +31,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route exact path="/write" element={<BlogForm />} />
         <Route path="/blogs/:id" element={<SingleBlog />} />
       </Routes>
-    </Router>
+    </HashRouter>
   </Provider>
 );
