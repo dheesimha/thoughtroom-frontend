@@ -627,7 +627,7 @@ body::-webkit-scrollbar-thumb {
 
   .pageCol {
     /* text-align: center; */
-    margin-left: 10px;
+    margin: auto;
     width: 350px;
   }
 
@@ -642,7 +642,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .pageCol2 {
-    margin-left: 10px;
+    margin: auto;
     width: 350px;
   }
 
@@ -1285,43 +1285,47 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Mobile landscape */
-@media only screen and (min-width: 280px) and (max-width: 900px) and (orientation: landscape) {
-  .nav2 {
+/* @media only screen and (min-width: 280px) and (max-width: 900px) and (orientation: landscape) { */
+/* .nav2 {
     font-size: 13px !important;
   }
-  .navHeading {
-    font-size: 23px !important;
-    list-style-type: none;
-    position: absolute;
-    left: 0;
-    margin-left: 10px !important;
-    padding: 8px;
-    color: white;
-  }
+} */
 
-  .pageCol {
-    display: flex;
-    flex-direction: column;
-    color: #eeeeef;
-    background-color: black;
-    margin-top: -6px;
-    padding: 50px;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
-    width: -moz-fit-content;
-    width: fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    margin-left: 80px;
-  }
+/* .navHeading {
+  font-size: 23px !important;
+  list-style-type: none;
+  position: absolute;
+  left: 0;
+  margin-left: 10px !important;
+  padding: 8px;
+  color: white;
+} */
 
-  #loginHeader,
-  #RegisterHeader {
-    font-size: 25px;
-    margin-top: -30px;
-    color: #0ea5e9;
-  }
+/* .pageCol {
+  display: flex;
+  flex-direction: column;
+  color: #eeeeef;
+  background-color: black;
+  margin-top: -6px;
+  padding: 50px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: 80px;
+} */
+
+/* #loginHeader,
+#RegisterHeader {
+  font-size: 25px;
+  margin-top: -30px;
+  color: #0ea5e9;
+} */
+
+/*
 
   #loginUsername,
   #loginPassword,
@@ -1344,8 +1348,7 @@ body::-webkit-scrollbar-thumb {
     width: 259px;
     height: 202px;
     /* border: 2px solid yellow; */
-  }
-  #homeSubmitBtn {
+/* #homeSubmitBtn {
     overflow: hidden;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -1385,6 +1388,5 @@ body::-webkit-scrollbar-thumb {
   }
 
   .titleInput {
-    font-size: 15px !important;
-  }
-}
+    font-size: 15px !important; */
+/* } */
