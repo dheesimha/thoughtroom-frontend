@@ -17,14 +17,14 @@ a {
   flex-direction: column;
   color: #eeeeef;
   background-color: black;
-  margin-top: 60px;
   padding: 50px;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
   width: fit-content;
   height: fit-content;
-  margin-left: 400px;
+  margin: auto;
+  margin-top: 60px;
 }
 
 .pageCol form {
@@ -39,14 +39,14 @@ a {
   flex-direction: column;
   color: #eeeeef;
   background-color: black;
-  margin-top: 30px;
   padding: 50px;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
   width: fit-content;
   height: fit-content;
-  margin-left: 400px;
+  margin: auto;
+  margin-top: 30px;
 }
 
 .pageCol2 form {
@@ -620,10 +620,6 @@ body::-webkit-scrollbar-thumb {
     overflow-x: hidden;
   }
 
-  #loginUsername:focus,
-  #loginPassword:focus {
-    border: 2px solid white;
-  }
   .endItems2 {
     margin-right: 0px !important;
     font-size: 18px;
@@ -724,10 +720,10 @@ body::-webkit-scrollbar-thumb {
 
   .mobileListItems {
     position: absolute;
-    right: 28px;
+    right: 15px;
+    padding-left: 160px;
     width: 100%;
     height: 100%;
-    padding-left: 160px;
     border-bottom: 2px solid #3d495b;
     /* z-index: 2; */
 
@@ -804,6 +800,14 @@ body::-webkit-scrollbar-thumb {
   .mobileDateContent {
     display: block;
   }
+
+  #loginUsername:focus,
+  #loginPassword:focus,
+  #RegisterName:focus,
+  #RegisterUsername:focus,
+  #RegisterPassword:focus {
+    outline: 2px solid white !important;
+  }
 }
 
 @media only screen and (min-width: 380px) and (max-width: 600px) {
@@ -816,7 +820,7 @@ body::-webkit-scrollbar-thumb {
   #RegisterName:focus,
   #RegisterUsername:focus,
   #RegisterPassword:focus {
-    outline: 2px solid white;
+    outline: 2px solid white !important;
   }
   .endItems2 {
     margin-right: 0px !important;
@@ -825,7 +829,7 @@ body::-webkit-scrollbar-thumb {
 
   .pageCol {
     /* text-align: center; */
-    margin-left: 28px;
+    margin: auto;
     width: 350px;
   }
 
@@ -840,7 +844,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .pageCol2 {
-    margin-left: 28px;
+    margin: auto;
     width: 350px;
   }
 
@@ -1312,14 +1316,18 @@ body::-webkit-scrollbar-thumb {
     margin-left: 80px;
   }
 
-  #loginHeader {
+  #loginHeader,
+  #RegisterHeader {
     font-size: 25px;
     margin-top: -30px;
     color: #0ea5e9;
   }
 
   #loginUsername,
-  #loginPassword {
+  #loginPassword,
+  #RegisterUsername,
+  #RegisterPassword,
+  #RegisterName {
     font-size: 12px;
   }
 
@@ -1350,5 +1358,33 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid #3d495b;
     border-radius: 15px;
     font-size: 16px;
+  }
+
+  .endItems {
+    font-size: 15px;
+  }
+
+  .design {
+    display: none;
+  }
+
+  .mobileDateContent {
+    display: block;
+  }
+
+  .blogItems {
+    width: 450px;
+  }
+
+  #loginUsername:focus,
+  #loginPassword:focus,
+  #RegisterName:focus,
+  #RegisterUsername:focus,
+  #RegisterPassword:focus {
+    outline: 2px solid white !important;
+  }
+
+  .titleInput {
+    font-size: 15px !important;
   }
 }
